@@ -1,55 +1,26 @@
-package com.company;
 import java.util.Scanner;
+
 public class Main {
 
-    public static void main(String[] args) {
-        Scanner num = new Scanner(System.in);
-        int first;
-        System.out.print("enter num: ");
-        first = num.nextInt();
+    public static void main (String [] args) {
 
-        switch (first) {
-            case 1:
-                System.out.print("Январь");
-                break;
-            case 2:
-                System.out.print("Февраль");
-                break;
-            case 3:
-                System.out.print("март");
-                break;
-            case 4:
-                System.out.print("Апрель");
-                break;
-            case 5:
-                System.out.print("Май");
-                break;
-            case 6:
-                System.out.print("Июнь");
-                break;
-            case 7:
-                System.out.print("Июль");
-                break;
-            case 8:
-                System.out.print("Август");
-                break;
-            case 9:
-                System.out.print("Сентябрь");
-                break;
-            case 10:
-                System.out.print("Октябрь");
-                break;
-            case 11:
-                System.out.print("Ноябрь");
-                break;
-            case 12:
-                System.out.print("Декабрь");
-                break;
+        Scanner sc = new Scanner(System.in);
+        int [] arr = new int [sc.nextInt()];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
         }
-
+        VectorCode nail = new VectorCode(arr);
+        nail.print();
+        int [] gail = nail.decode();
+        for (int i = 0; i < gail.length; i++) {
+            System.out.print(gail[i] + " ");
+        }
+        System.out.println();
+        nail.delete(6);
+        nail.print();
+        nail.insert(228, 4);
+        nail.print();
+        VectorCode hanzo = new VectorCode(arr);
+        System.out.println(nail.scalarProduct(hanzo));
     }
-
 }
-
-
-
